@@ -35,20 +35,10 @@ double solve(double _x, vector<vector<double> >table_newton,vector<double> x){
 
 int main() {
 
-    // #ifndef ONLINE_JUDGE
-    // freopen("Show_screen/INP.TXT", "r", stdin);
-    // freopen("Show_screen/OUT.TXT", "w", stdout);
-    // #endif  
-/* 
-5
-0 1
-2 3
-3 2
-5 5
-6 6
- */
+    freopen("INP.TXT","r",stdin);
+    freopen("OUT.TXT","w",stdout);
     int n;
-    double _x;
+    double _x,__x;
 
     cin >> n;
 
@@ -61,13 +51,12 @@ int main() {
         table_newton[0][i] = Y[i];
     }
 
-    cin >> _x;
+    cin >> _x>>__x;
 
     creat_table(X,Y, n, table_newton);
 
-    print_table_newton(table_newton, n);
 
-    cout << solve(_x, table_newton,X) << endl;
+    cout << solve(_x, table_newton,X)*solve(__x,table_newton,X) << endl;
 
     return 0;
 }
